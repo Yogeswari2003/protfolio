@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- navbar section starts  -->
+
+<nav class="navbar">
+    <a href="home.html"> <i class="fas fa-home"></i> <span>home</span> </a>
+    <a href="about.html"> <i class="fas fa-user"></i> <span>about</span> </a>
+    <a href="contact.html"> <i class="fas fa-address-book"></i> <span>contact</span> </a>
+</nav>
+
+<!-- navbar section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact">
+
+<h1 class="heading"> contact <span>me</span> </h1>
+
+<div class="row">
+
+    <div class="info-container">
+
+        <h1>get in touch</h1>
+        <p>Don't ignore the effort of a person who tries to keep in touch</p>
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fas fa-map"></i>
+                <div class="info">
+                    <h3>address :</h3>
+                    <p>senaikudai muthusamy street,shevapet,salem-636002</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <div class="info">
+                    <h3>email :</h3>
+                    <p>yogirajendran954@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-phone"></i>
+                <div class="info">
+                    <h3>number :</h3>
+                    <p>8428984932</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="share">
+            <a href="https://instagram.com/y00ge?igshid=ZDdkNTZiNTM=" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://www.linkedin.com/in/yogeswari-r-b760a0250" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </div>
+
+    </div>
+
+    <form action="send()" onsubmit="send(); reset(); return false">
+
+    <div class="inputBox">
+        <input type="text" placeholder="your name" id="Name">
+        <input type="number" placeholder="your number" id="Contact">
+    </div>
+
+    <div class="inputBox">
+        <input type="email" placeholder="your email" id="Email">
+        <input type="text" placeholder="your subject" id="Subject">
+    </div>
+
+    <textarea name="" placeholder="your message" id="message" cols="30" rows="10"></textarea>
+    <button type="submit" class="btn" >Send <i class="fas fa-paper-plane"></i></button>
+
+</form>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+function send(){
+    let name = document.getElementById("Name").value; 
+    let email = document.getElementById("Email").value;
+    let contact = document.getElementById("Contact").value;
+    let subject = document.getElementById("Subject").value; 
+    let message = document.getElementById("message").value;
+    Email.send({
+        SecureToken : "759047e4-5d6e-4ba1-86c3-2eb3795d0476",
+        To : "streshi17@gmail.com",
+        From :"streshi17@gmail.com",
+        Subject : "mail From Contact Form",
+        Body : "name:" + name + "<br> Email:" + email + "<br/>Contact:" + contact + "<br/>Subject:" + subject + "<br/>message:" + message
+    }).then(
+        message => alert(message)
+        );
+}
+</script>          
+
+
+
+
+</section>
+
+     
+        
+        
+
+</section>
+
+<!-- contact section ends -->
+
+</body>
+</html>
